@@ -11,4 +11,12 @@ files = []
 for file in os.listdir(dir_name):
     if file.endswith(".csv"):
         files.append(file)
-print(files)
+print("\nCSV files:")
+for i in range(len(files)):
+    print(f"{i + 1}. {files[i]}")
+choice = int(input("\nEnter file you want to load: ")) - 1
+
+with open('Giants.csv', mode ='r')as file:
+  csvFile = csv.reader(file)
+  for lines in csvFile:
+        print(lines)
